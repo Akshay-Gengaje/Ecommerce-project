@@ -9,9 +9,6 @@ nav {
   height: 10%;
 }
 
-.hamburger {
-  display: none;
-}
 .logo h1 a {
   text-decoration: none;
   color: #fd5c4f;
@@ -54,6 +51,10 @@ li a:active {
   color: #fd5c4f;
 }
 
+.menu {
+  display: none;
+}
+
 @media (max-width: 760px) {
   nav {
     display: flex;
@@ -65,10 +66,46 @@ li a:active {
   .auth_links {
     display: none;
   }
-  .hamburger {
+  .menu {
     display: contents;
+    font-size: 1.6rem;
   }
-  .hamburger:hover {
+  .menu:hover {
     color: #fd5c4f;
+    cursor: pointer;
+  }
+
+  .responsive {
+    display: flex;
+    height: 100vh;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    transform: 100vh;
+    transition: all 0.5s;
+  }
+  .responsive > .nav_links,
+  .responsive > .auth_links {
+    display: flex;
+  }
+
+  ul {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .responsive-menu {
+    border: none;
+    background: transparent;
+    font-size: 1.9rem;
+    color: #fd5c4f;
+    position: absolute;
+    top: 1.3rem;
+    right: 1.3rem;
+  }
+  .responsive-menu:hover {
+    color: #fd5c4f;
+    cursor: pointer;
   }
 } ;

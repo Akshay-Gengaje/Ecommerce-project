@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
+import { IoCloseSharp } from 'react-icons/io5';
 import './navbar.css';
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(true);
+  useEffect(() => {
+    console.log();
+  });
   return (
-    <nav>
+    <nav className={menuOpen ? '' : 'responsive'}>
       <div className="logo">
         <h1>
           <a href="#">GoSnippets</a>
@@ -35,9 +40,12 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="hamburger">
-        <FaBars />
-      </div>
+      <button
+        className={menuOpen ? 'menu' : 'responsive-menu'}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? <FaBars /> : <IoCloseSharp />}
+      </button>
     </nav>
   );
 };
